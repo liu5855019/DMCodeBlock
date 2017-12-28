@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>oc-Timer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - timer
+@property (nonatomic) dispatch_source_t timer;
+-(void)startTimer
+{
+    //获取一个并行队列 (默认优先级队列)
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    //创建 timer
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    &lt;#_timer#&gt; = timer;
+    //设置timer间隔和精度
+    //interval:间隔 (纳秒),配合NSEC_PER_SEC用就是秒
+    //leeway:精度 ,最高精度当然就传0。
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, &lt;#1#&gt; * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+    //设置回调
+    WeakObj(self);
+    dispatch_source_set_event_handler(timer, ^{
+        MAIN(^{
+            &lt;#code#&gt;
+        });
+    });
+    dispatch_resume(&lt;#_timer#&gt;);
+}
+-(void)stopTimer
+{
+    dispatch_cancel(&lt;#_timer#&gt;);
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E97ECEC1-730A-4990-BAB2-DA7BA86843F6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>oc-Timer</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

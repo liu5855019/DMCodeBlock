@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>oc-Keyboard</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark -TextViewAndKebboard
+-(void)viewWillAppear:(BOOL)animated{
+    [self registerForKeyboardNotifications];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [self removeNotifications];
+}
+- (void)registerForKeyboardNotifications{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardDidHideNotification object:nil];
+}
+
+-(void)removeNotifications{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+//实现当键盘出现的时候计算键盘的高度大小。用于输入框显示位置
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    //kbSize即為鍵盤尺寸 (有width, height)
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;//得到鍵盤的高度
+    NSLog(@"hight_hitht:%f",kbSize.height);
+    CGRect rect = self.bgView.frame;
+    rect.origin.y -= kbSize.height;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.bgView.frame = rect;
+    }];
+
+}
+
+//当键盘隐藏的时候
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    NSLog(@"Keyboard Hidden");
+}
+
+-(void)keyboardFrameWillBeChanged:(NSNotification*)aNotification
+{
+    NSLog(@"Keyboard Frame Changed");
+}
+
+
+//(TextView) 当键盘开始输入前。时行计算与动画加载
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    NSLog(@"gegin animation");
+}
+
+
+//输入结束时调用动画（把按键。背景。输入框都移下去）
+-(void)textViewDidEndEditing:(UITextView *)textView
+{
+    //释放
+
+}
+//判断当前输入法
+-(void)textViewDidChangeSelection:(UITextView *)textView
+{
+    NSLog(@"wewe:%@",[[UITextInputMode currentInputMode] primaryLanguage]);
+
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>18BE18A9-38AC-4B27-A7B8-E18A72A98651</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OCKeyboardAndTextView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>oc-maopaopaixu</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//冒泡排序
+    for (NSInteger i = &lt;#muarray#&gt;.count -1; i&gt;0 ; i--) {
+        for (NSInteger j = 0; j &lt; i; j++) {
+            &lt;#Model#&gt; *model1 = datass[j];
+            &lt;#Model#&gt; *model2 = datass[j+1];
+            if (model2.&lt;#value#&gt; &lt;#&lt;#&gt; model1.&lt;#value#&gt;) {
+                datass[j] = model2;
+                datass[j+1] = model1;
+            }
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B2D4599C-AFBE-4751-B74E-931EE3CF95B5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>oc-maopaopaixu</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
