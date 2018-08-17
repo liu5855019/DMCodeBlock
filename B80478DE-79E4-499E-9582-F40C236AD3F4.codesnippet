@@ -10,7 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>
--(instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
         [self setupViews];
@@ -19,12 +19,12 @@
     return self;
 }
 
--(void)setupViews
+- (void)setupViews
 {
 
 }
 
--(void)setupLayouts
+- (void)setupLayouts
 {
 
 }

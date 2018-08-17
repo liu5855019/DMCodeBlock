@@ -13,14 +13,14 @@
 
 self.navigationItem.rightBarButtonItem = self.rightItem;
 
--(UIBarButtonItem *)rightItem
+- (UIBarButtonItem *)rightItem
 {
     if (_rightItem == nil) {
         _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(clickRightItem)];
     }
     return _rightItem;
 }
--(void)clickRightItem
+- (void)clickRightItem
 {
     
 }</string>

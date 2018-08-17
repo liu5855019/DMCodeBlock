@@ -6,9 +6,10 @@
 	<string>oc-note</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassInterfaceMethods</string>
-		<string>Preprocessor</string>
 		<string>ClassImplementation</string>
+		<string>Preprocessor</string>
+		<string>TopLevel</string>
+		<string>ClassInterfaceMethods</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>/** &lt;#注释#&gt; */</string>

@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>oc-3</string>
+	<string>oc-copy</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassInterfaceVariables</string>
+		<string>ClassInterfaceMethods</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>/**&lt; &lt;#注释#&gt; */</string>
+	<string>@property (nonatomic , copy) &lt;#key#&gt; *&lt;#value#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>6C9DBB48-86F5-4877-9612-9CAD54BE8779</string>
+	<string>C9BFE3D3-A13F-43E5-90D5-96A23097B721</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>3</string>
+	<string>OC-Copy</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,19 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>oc-2</string>
+	<string>oc-code</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassInterfaceMethods</string>
+		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>/**&lt; &lt;#注释#&gt; */</string>
+	<string> NSDictionary *info = responseObject[@"ReturnInfo"];
+        NSInteger code = DM_INTEGER(info[@"Code"]);
+        if (code != 200) {
+            [selfWeak hideHUD];
+            return ;
+        }
+        
+        [selfWeak hideHUD];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>8987283A-52B9-491E-AB28-D11396AFF386</string>
+	<string>0E3DE9F2-3C4B-4110-9703-5F5F097019D0</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>2</string>
+	<string>oc - code</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

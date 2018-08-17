@@ -11,7 +11,7 @@
 	<key>IDECodeSnippetContents</key>
 	<string>#pragma mark - timer
 @property (nonatomic) dispatch_source_t timer;
--(void)startTimer
+- (void)startTimer
 {
     //获取一个并行队列 (默认优先级队列)
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -31,7 +31,7 @@
     });
     dispatch_resume(&lt;#_timer#&gt;);
 }
--(void)stopTimer
+- (void)stopTimer
 {
     dispatch_cancel(&lt;#_timer#&gt;);
 }
